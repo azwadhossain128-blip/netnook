@@ -47,7 +47,7 @@
         <i class="fa-solid fa-shield-halved"></i>
       </div>
       <h2 class="text-2xl font-black text-slate-900">এডমিন লগইন</h2>
-      <p class="text-xs text-slate-500 mt-1 mb-5">ড্যাশবোর্ড অ্যাক্সেস করতে পাসওয়ার্ড দিন</p>
+      <p class="text-xs text-slate-500 mt-1 mb-5">ড্যাশবোর্ড অ্যাক্সেস করতে পাসওয়ার্ড দিন</p>
       
       <div class="space-y-3">
         <input type="password" id="adminPass" placeholder="পাসওয়ার্ড লিখুন..." 
@@ -161,7 +161,7 @@
     </div>
   </div>
 
-  <!-- ================= ⚙️ SETTINGS MODAL (DYNAMIC CLIENT CONFIG) ================= -->
+  <!-- ================= ⚙️ SETTINGS MODAL (DYNAMIC CLIENT CONFIG WITH META CAPI) ================= -->
   <div id="settingsModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center z-50 p-4 hidden transition-all">
     <div class="bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-slate-100 overflow-hidden flex flex-col max-h-[90vh]">
       <div class="bg-slate-900 text-white px-5 py-4 flex items-center justify-between">
@@ -169,7 +169,7 @@
           <span class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center text-sm"><i class="fa-solid fa-sliders"></i></span>
           <div>
             <h3 class="font-bold text-sm">ক্লায়েন্ট কনফিগারেশন & সেটিংস</h3>
-            <p class="text-[10px] text-slate-400">আপনার নিজস্ব API ও Webhook সেট করুন</p>
+            <p class="text-[10px] text-slate-400">আপনার নিজস্ব API, Meta CAPI ও Webhook সেট করুন</p>
           </div>
         </div>
         <button onclick="closeSettingsModal()" class="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xs">
@@ -197,7 +197,7 @@
               কপি
             </button>
           </div>
-          <p class="text-[10px] text-emerald-700 leading-tight">SteadFast মার্চেন্ট প্যানেলে গিয়ে এই URL-টি Webhook সেটিংসে পেস্ট করে দিন।</p>
+          <p class="text-[10px] text-emerald-700 leading-tight">SteadFast মার্চেন্ট প্যানেলে গিয়ে এই URL-টি Webhook সেটিংসে পেস্ট করে দিন।</p>
         </div>
 
         <!-- SteadFast API Credentials -->
@@ -215,12 +215,19 @@
           </div>
         </div>
 
-        <!-- Meta Pixel & BD Courier -->
-        <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
-          <label class="block font-bold text-slate-800 mb-1 flex items-center gap-1.5">
-            <i class="fa-brands fa-facebook text-blue-600"></i> Meta (Facebook) Pixel ID
-          </label>
-          <input type="text" id="cfgMetaPixel" placeholder="যেমন: 1507252884365898" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 font-mono text-xs outline-none focus:border-slate-900" />
+        <!-- 🎯 Meta Pixel & CAPI Settings (Updated) -->
+        <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 space-y-2.5">
+          <div class="font-bold text-slate-800 flex items-center gap-1.5">
+            <i class="fa-brands fa-facebook text-blue-600"></i> Meta Pixel & Conversions API (CAPI)
+          </div>
+          <div>
+            <label class="block text-slate-600 text-[11px] font-semibold mb-1">Meta Pixel ID</label>
+            <input type="text" id="cfgMetaPixel" placeholder="যেমন: 628150683565093" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 font-mono text-xs outline-none focus:border-slate-900" />
+          </div>
+          <div>
+            <label class="block text-slate-600 text-[11px] font-semibold mb-1">CAPI Access Token</label>
+            <textarea id="cfgMetaAccessToken" rows="2" placeholder="EAAB... (Events Manager থেকে Generate Access Token নিন)" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 font-mono text-xs outline-none focus:border-slate-900 resize-none"></textarea>
+          </div>
         </div>
 
         <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
@@ -269,7 +276,7 @@
         <i class="fa-solid fa-truck-fast"></i>
       </div>
       <h4 class="font-bold text-xs text-slate-900">SteadFast Webhook Sync</h4>
-      <p class="text-[10px] text-slate-500 mt-0.5">অটোমেটিক রিয়েল-টাইম শিপিং আপডেট</p>
+      <p class="text-[10px] text-slate-500 mt-0.5">অটোমেটিক রিয়েল-টাইম শিপিং আপডেট</p>
     </div>
   </aside>
 
@@ -436,7 +443,7 @@
         <div class="grid grid-cols-1 md:grid-cols-12 gap-2">
           <div class="relative md:col-span-6">
             <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-xs"></i>
-            <input type="text" id="searchInput" oninput="filterOrders()" placeholder="নাম, মোবাইল, এলাকা বা আইডি দিয়ে খুঁজুন..." 
+            <input type="text" id="searchInput" oninput="filterOrders()" placeholder="নাম, মোবাইল, এলাকা বা আইডি দিয়ে খুঁজুন..." 
               class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3 py-2 text-xs outline-none focus:border-slate-900 focus:bg-white transition" />
           </div>
 
@@ -518,7 +525,7 @@
   <!-- Toast Notification -->
   <div id="toast" class="fixed bottom-5 right-5 z-50 bg-slate-900 text-white text-xs font-bold px-4 py-3 rounded-2xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2">
     <i class="fa-solid fa-circle-check text-emerald-400"></i>
-    <span id="toastMsg">সফলভাবে সম্পন্ন হয়েছে!</span>
+    <span id="toastMsg">সফলভাবে সম্পন্ন হয়েছে!</span>
   </div>
 
   <!-- ================= ⚡ COMPLETE JAVASCRIPT ENGINE ================= -->
@@ -691,24 +698,24 @@
 
       if (datePreset === 'TODAY') {
         salesTitle = "আজকের মোট সেলস";
-        salesSubtitle = "আজকের দিনের সর্বমোট বিক্রয়";
+        salesSubtitle = "আজকের দিনের সর্বমোট বিক্রয়";
         countTitle = "আজকের মোট অর্ডার";
       } else if (datePreset === 'YESTERDAY') {
         salesTitle = "গতকালের মোট সেলস";
-        salesSubtitle = "গতকালের সম্পূর্ণ বিক্রয়";
+        salesSubtitle = "গতকালের সম্পূর্ণ বিক্রয়";
         countTitle = "গতকালের মোট অর্ডার";
       } else if (datePreset === '7DAYS') {
         salesTitle = "বিগত ৭ দিনের সেলস";
-        salesSubtitle = "গত ৭ দিনের মোট বিক্রয়";
+        salesSubtitle = "গত ৭ দিনের মোট বিক্রয়";
         countTitle = "৭ দিনের মোট অর্ডার";
       } else if (datePreset === '30DAYS') {
         salesTitle = "বিগত ৩০ দিনের সেলস";
-        salesSubtitle = "গত ৩০ দিনের মোট বিক্রয়";
+        salesSubtitle = "গত ৩০ দিনের মোট বিক্রয়";
         countTitle = "৩০ দিনের মোট অর্ডার";
       } else if (datePreset === 'CUSTOM') {
         salesTitle = "কাস্টম রেঞ্জ সেলস";
-        salesSubtitle = "নির্বাচিত তারিখ রেঞ্জের মোট বিক্রয়";
-        countTitle = "রেঞ্জ অনুযায়ী অর্ডার";
+        salesSubtitle = "নির্বাচিত তারিখ রেঞ্জের মোট বিক্রয়";
+        countTitle = "রেঞ্জ অনুযায়ী অর্ডার";
       }
 
       document.getElementById('salesCardTitle').innerText = salesTitle;
@@ -913,7 +920,7 @@
               <a href="https://wa.me/88${cleanPhone}?text=${encodeURIComponent('আসসালামু আলাইকুম ' + o.name + ', Azwad Leather থেকে যোগাযোগ করছি।')}" target="_blank" class="w-6 h-6 rounded-lg bg-slate-100 hover:bg-emerald-600 hover:text-white text-slate-600 flex items-center justify-center text-[10px]" title="WhatsApp">
                 <i class="fa-brands fa-whatsapp"></i>
               </a>
-              <button onclick="copyToClipboard('${courierText.replace(/'/g, "\\'")}', 'কুরিয়ার টেক্সট কপি হয়েছে!')" class="w-6 h-6 rounded-lg bg-slate-100 hover:bg-slate-900 hover:text-white text-slate-600 flex items-center justify-center text-[10px]" title="কপি করুন">
+              <button onclick="copyToClipboard('${courierText.replace(/'/g, "\\'")}', 'কুরিয়ার টেক্সট কপি হয়েছে!')" class="w-6 h-6 rounded-lg bg-slate-100 hover:bg-slate-900 hover:text-white text-slate-600 flex items-center justify-center text-[10px]" title="কপি করুন">
                 <i class="fa-solid fa-copy"></i>
               </button>
             </div>
@@ -1046,11 +1053,11 @@
       }
 
       const steps = [
-        { key: 'Pending', label: '১. নতুন অর্ডার রিসিভড (Processing)', desc: 'অর্ডার সিস্টেমে এন্ট্রি হয়েছে' },
+        { key: 'Pending', label: '১. নতুন অর্ডার রিসিভড (Processing)', desc: 'অর্ডার সিস্টেমে এন্ট্রি হয়েছে' },
         { key: 'Confirmed', label: '২. কাস্টমার কনফার্মেশন (Confirmed)', desc: 'ফোনে কথা বলে ঠিকানা ও পণ্য নিশ্চিত' },
         { key: 'Packed', label: '৩. পার্সেল প্যাকেজিং (Packed)', desc: 'প্যাকেট প্রস্তুত ও লেবেল প্রিন্ট সম্পন্ন' },
-        { key: 'Shipped', label: '৪. কুরিয়ারে হস্তান্তর (Shipped)', desc: 'SteadFast কুরিয়ারে হ্যান্ডওভার করা হয়েছে' },
-        { key: 'Delivered', label: '৫. সফল ডেলিভারি (Delivered)', desc: 'কাস্টমার পণ্য বুঝে পেয়েছেন ও ক্যাশ কালেক্টেড' }
+        { key: 'Shipped', label: '৪. কুরিয়ারে হস্তান্তর (Shipped)', desc: 'SteadFast কুরিয়ারে হ্যান্ডওভার করা হয়েছে' },
+        { key: 'Delivered', label: '৫. সফল ডেলিভারি (Delivered)', desc: 'কাস্টমার পণ্য বুঝে পেয়েছেন ও ক্যাশ কালেক্টেড' }
       ];
 
       const currentStatus = (o.status || 'Pending').toLowerCase();
@@ -1227,6 +1234,7 @@
         const data = await res.json();
         if(data.ok && data.settings) {
           document.getElementById('cfgMetaPixel').value = data.settings.metaPixelId || '';
+          document.getElementById('cfgMetaAccessToken').value = data.settings.metaAccessToken || '';
           document.getElementById('cfgSfApiKey').value = data.settings.steadfastApiKey || '';
           document.getElementById('cfgSfSecretKey').value = data.settings.steadfastSecretKey || '';
           document.getElementById('cfgBdCourierKey').value = data.settings.bdcourierApiKey || '';
@@ -1240,7 +1248,7 @@
 
     function copyWebhookUrl() {
       const url = document.getElementById('cfgWebhookUrlDisplay').value;
-      copyToClipboard(url, "Webhook URL কপি হয়েছে! SteadFast-এ পেস্ট করুন।");
+      copyToClipboard(url, "Webhook URL কপি হয়েছে! SteadFast-এ পেস্ট করুন।");
     }
 
     async function saveSettings(e) {
@@ -1256,6 +1264,7 @@
       const payload = {
         storeCode: storeCode,
         metaPixelId: document.getElementById('cfgMetaPixel').value.trim(),
+        metaAccessToken: document.getElementById('cfgMetaAccessToken').value.trim(),
         steadfastApiKey: document.getElementById('cfgSfApiKey').value.trim(),
         steadfastSecretKey: document.getElementById('cfgSfSecretKey').value.trim(),
         bdcourierApiKey: document.getElementById('cfgBdCourierKey').value.trim()
@@ -1269,7 +1278,7 @@
         });
         const data = await res.json();
         if(res.ok && data.ok) {
-          showToast("✅ সেটিংস সংরক্ষিত হয়েছে!");
+          showToast("✅ সেটিংস ও Meta CAPI সংরক্ষিত হয়েছে!");
           closeSettingsModal();
           loadOrders();
         } else {
