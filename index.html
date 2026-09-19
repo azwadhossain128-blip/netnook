@@ -15,7 +15,7 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Meta Pixel Code (100% Fixed & Single-Fire Setup) -->
+    <!-- Base Meta Pixel Loader Shell (Dynamic) -->
     <script>
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -25,13 +25,7 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        
-        // 🛑 ফেসবুকের ফেক অটোমেটিক বাটন-ক্লিক ট্র্যাকিং বন্ধ করার কমান্ড:
-        fbq('set', 'autoConfig', false, '628150683565093');
-        fbq('init', '628150683565093');
-        fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=628150683565093&ev=PageView&noscript=1"/></noscript>
 
     <!-- Tailwind CSS Setup -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -244,7 +238,6 @@
                         </p>
 
                         <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                           
                             <a href="#reels" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 font-serif font-bold text-lg px-8 py-4.5 rounded-full text-brand-900 hover:bg-brand-100 transition-colors uppercase tracking-widest">
                                 <i class="fa-solid fa-play"></i> Watch Video
                             </a>
@@ -322,7 +315,7 @@
                         <span class="h-[1px] w-8 bg-brand-400"></span>
                     </div>
                     <h2 class="font-serif text-4xl md:text-5xl font-bold text-brand-900 mb-6">See The Quality Up Close</h2>
-                    <p class="text-lg text-brand-700">আমাদের হ্যান্ড ব্রেইডেড লেদার বেল্টের আসল সৌন্দর্য ও কোয়ালিটি দেখতে ভিডিওটি প্লে করুন।</p>
+                    <p class="text-lg text-brand-700">আমাদের হ্যান্ড ব্রেইডেড লেদার বেল্টের আসল সৌন্দর্য ও কোয়ালিটি দেখতে ভিডিওটি প্লে করুন।</p>
                 </div>
 
                 <div class="max-w-4xl mx-auto">
@@ -526,7 +519,7 @@
                             </li>
                             <li class="flex items-start gap-3 text-brand-800">
                                 <i class="fa-solid fa-check text-brand-600 mt-1"></i>
-                                <span>ফরমাল ও ক্যাজুয়াল উভয় লুকে বেস্ট</span>
+                                <span>ফরমাল ও ক্যাজুয়াল উভয় লুকে বেস্ট</span>
                             </li>
                             <li class="flex items-start gap-3 font-bold text-brand-900">
                                 <i class="fa-solid fa-truck-fast text-brand-600 mt-1"></i>
@@ -555,14 +548,14 @@
                 <div class="space-y-4" id="faqAccordion">
                     <div class="faq-item active bg-brand-50 border border-brand-200 rounded-2xl overflow-hidden">
                         <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
-                            <h3 class="font-bold text-brand-900 text-lg pr-4">এটি কি ১০০% আসল চামড়ার তৈরি?</h3>
+                            <h3 class="font-bold text-brand-900 text-lg pr-4">এটি কি ১০০% আসল চামড়ার তৈরি?</h3>
                             <span class="faq-icon w-8 h-8 rounded-full bg-brand-200 flex items-center justify-center shrink-0 text-brand-800">
                                 <i class="fa-solid fa-chevron-down text-sm"></i>
                             </span>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-inner px-6 pb-6 text-brand-700 leading-relaxed">
-                                হ্যাঁ, আমাদের প্রতিটি বেল্ট প্রিমিয়াম কোয়ালিটির জেনুইন কাউ লেদার (খাঁটি গরুর চামড়া) দিয়ে তৈরি। এতে কোনো প্রকার সিন্থেটিক, পিইউ (PU) বা রেক্সিন মেশানো হয়নি, তাই এটি দীর্ঘদিন ব্যবহারে ফাটে না বা নষ্ট হয় না।
+                                হ্যাঁ, আমাদের প্রতিটি বেল্ট প্রিমিয়াম কোয়ালিটির জেনুইন কাউ লেদার (খাঁটি গরুর চামড়া) দিয়ে তৈরি। এতে কোনো প্রকার সিন্থেটিক, পিইউ (PU) বা রেক্সিন মেশানো হয়নি, তাই এটি দীর্ঘদিন ব্যবহারে ফাটে না বা নষ্ট হয় না।
                             </div>
                         </div>
                     </div>
@@ -576,7 +569,7 @@
                         </button>
                         <div class="faq-answer">
                             <div class="faq-inner px-6 pb-6 text-brand-700 leading-relaxed">
-                                একদমই না! অর্ডার কনফার্ম করতে কোনো প্রকার অগ্রিম পেমেন্ট বা ডেলিভারি চার্জ বিকাশ করতে হবে না। আমরা সম্পূর্ণ ক্যাশ অন ডেলিভারিতে পার্সেল পাঠিয়ে থাকি। পণ্য হাতে পেয়ে, চেক করে তারপর ডেলিভারি ম্যানকে টাকা পরিশোধ করবেন।
+                                একদমই না! অর্ডার কনফার্ম করতে কোনো প্রকার অগ্রিম পেমেন্ট বা ডেলিভারি চার্জ বিকাশ করতে হবে না। আমরা সম্পূর্ণ ক্যাশ অন ডেলিভারিতে পার্সেল পাঠিয়ে থাকি। পণ্য হাতে পেয়ে, চেক করে তারপর ডেলিভারি ম্যানকে টাকা পরিশোধ করবেন।
                             </div>
                         </div>
                     </div>
@@ -590,21 +583,21 @@
                         </button>
                         <div class="faq-answer">
                             <div class="faq-inner px-6 pb-6 text-brand-700 leading-relaxed">
-                                বর্তমানে আমাদের স্পেশাল অফার চলছে, তাই সারা বাংলাদেশে ডেলিভারি চার্জ সম্পূর্ণ ফ্রি (৳0)। ঢাকার ভিতরে ডেলিভারি পেতে সাধারণত ১-২ দিন এবং ঢাকার বাইরে ২-৪ দিন সময় লাগে।
+                                বর্তমানে আমাদের স্পেশাল অফার চলছে, তাই সারা বাংলাদেশে ডেলিভারি চার্জ সম্পূর্ণ ফ্রি (৳0)। ঢাকার ভিতরে ডেলিভারি পেতে সাধারণত ১-২ দিন এবং ঢাকার বাইরে ২-৪ দিন সময় লাগে।
                             </div>
                         </div>
                     </div>
 
                     <div class="faq-item bg-brand-50 border border-brand-200 rounded-2xl overflow-hidden">
                         <button class="w-full flex items-center justify-between p-6 text-left focus:outline-none" onclick="toggleFaq(this)">
-                            <h3 class="font-bold text-brand-900 text-lg pr-4">সাইজ ছোট বা বড় হলে পরিবর্তনের সুযোগ আছে কি?</h3>
+                            <h3 class="font-bold text-brand-900 text-lg pr-4">সাইজ ছোট বা বড় হলে পরিবর্তনের সুযোগ আছে কি?</h3>
                             <span class="faq-icon w-8 h-8 rounded-full bg-brand-200 flex items-center justify-center shrink-0 text-brand-800">
                                 <i class="fa-solid fa-chevron-down text-sm"></i>
                             </span>
                         </button>
                         <div class="faq-answer">
                             <div class="faq-inner px-6 pb-6 text-brand-700 leading-relaxed">
-                                এই বেল্টটিতে কোনো ফিক্সড পাঞ্চ হোল নেই এবং এটি ব্রেইডেড (বিনুনি) ডিজাইনের। তাই আপনার ফিট অনুযায়ী যেকোনো জায়গায় পিন আটকে সাইজ অ্যাডজাস্ট করতে পারবেন (৩২ ইঞ্চি থেকে ৪২ ইঞ্চি পর্যন্ত)। এরপরও যদি সাইজ ছোট করার প্রয়োজন হয়, বাকলের পেছনের স্ক্রু খুলে খুব সহজেই বেল্ট কেটে ছোট করে নেওয়া যায়।
+                                এই বেল্টটিতে কোনো ফিক্সড পাঞ্চ হোল নেই এবং এটি ব্রেইডেড (বিনুনি) ডিজাইনের। তাই আপনার ফিট অনুযায়ী যেকোনো জায়গায় পিন আটকে সাইজ অ্যাডজাস্ট করতে পারবেন (৩২ ইঞ্চি থেকে ৪২ ইঞ্চি পর্যন্ত)। এরপরও যদি সাইজ ছোট করার প্রয়োজন হয়, বাকলের পেছনের স্ক্রু খুলে খুব সহজেই বেল্ট কেটে ছোট করে নেওয়া যায়।
                             </div>
                         </div>
                     </div>
@@ -690,7 +683,6 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-
     <!-- ============================================== -->
     <!-- DETAILED BUT MINIMAL SECURE CHECKOUT MODAL     -->
     <!-- ============================================== -->
@@ -702,7 +694,7 @@
                 <div class="absolute inset-0 opacity-10 bg-[url('https://cdn.saleecom.com/upload/images/680f794da54d0975ef3cc8ba/43326-b0c7.webp')] bg-cover bg-center"></div>
                 <div class="relative z-10">
                     <h3 class="font-serif text-xl font-bold leading-none mb-1">Secure Checkout</h3>
-                    <p class="text-xs text-brand-300">তথ্য দিয়ে আপনার অর্ডারটি কনফার্ম করুন</p>
+                    <p class="text-xs text-brand-300">তথ্য দিয়ে আপনার অর্ডারটি কনফার্ম করুন</p>
                 </div>
                 <button type="button" onclick="closeCheckoutModal()" class="relative z-10 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/25 transition-colors">
                     <i class="fa-solid fa-xmark text-sm"></i>
@@ -754,7 +746,7 @@
                         </div>
 
                         <div class="pt-2 border-t border-brand-100">
-                            <label class="block text-[11px] font-bold text-brand-600 mb-2 ml-1">ডেলিভারি এরিয়া (ফ্রি চার্জ)</label>
+                            <label class="block text-[11px] font-bold text-brand-600 mb-2 ml-1">ডেলিভারি এরিয়া (ফ্রি চার্জ)</label>
                             <div class="grid grid-cols-2 gap-3">
                                 <label class="custom-radio flex items-center gap-2.5 p-2.5 rounded-lg border border-brand-200 bg-brand-50 hover:bg-brand-100 transition-colors">
                                     <input type="radio" name="deliveryArea" value="Inside Dhaka" checked>
@@ -780,7 +772,7 @@
                             </div>
                             <div class="z-10">
                                 <div class="font-bold text-brand-900 text-[13px]">ক্যাশ অন ডেলিভারি (COD)</div>
-                                <div class="text-[11px] text-brand-600 mt-0.5">পণ্য হাতে পেয়ে মূল্য পরিশোধ করুন</div>
+                                <div class="text-[11px] text-brand-600 mt-0.5">পণ্য হাতে পেয়ে মূল্য পরিশোধ করুন</div>
                             </div>
                         </label>
                     </div>
@@ -839,16 +831,15 @@
         </div>
     </div>
 
-
     <!-- ============================================== -->
-    <!-- JAVASCRIPT LOGIC (100% SINGLE-FIRE PURCHASE)  -->
+    <!-- DYNAMIC LOGIC WITH 100% SINGLE-FIRE PURCHASE   -->
     <!-- ============================================== -->
     <script>
         const CONFIG = {
             WORKER_URL: 'https://proud-smoke-56cf.azwadhossain128.workers.dev',
             WHATSAPP_NUMBER: '8801627257060',
-            STORE_NAME: 'Rohan Leather',
-            STORE_CODE: 'RL'
+            STORE_NAME: 'Azwad Leather',
+            STORE_CODE: 'AL' // আপনার ক্লায়েন্ট স্টোরের কোড
         };
 
         const PACKAGES = {
@@ -869,14 +860,37 @@
             }
         };
 
+        let isPixelActive = false;
+        let activePixelId = null;
+        let hasPurchasedFired = false; // পার্মানেন্ট ট্র্যাকিং লক
+
+        // 🚀 Dynamic Meta Pixel Auto-Initializer (admin.html থেকে লোড হবে)
+        async function loadDynamicPixel() {
+            try {
+                const res = await fetch(`${CONFIG.WORKER_URL}/settings?store=${CONFIG.STORE_CODE}`);
+                const data = await res.json();
+
+                if (data.ok && data.settings && data.settings.metaPixelId) {
+                    activePixelId = String(data.settings.metaPixelId).trim();
+                    if (activePixelId) {
+                        // ফেসবুকের ফেক অটো বাটন ক্লিক ট্র্যাকিং বন্ধ
+                        fbq('set', 'autoConfig', false, activePixelId);
+                        fbq('init', activePixelId);
+                        fbq('track', 'PageView');
+                        isPixelActive = true;
+                    }
+                }
+            } catch (err) {
+                console.warn('Pixel initialization bypassed:', err);
+            }
+        }
+
         const modal = document.getElementById('checkoutModal');
         const checkoutForm = document.getElementById('checkoutForm');
         const successScreen = document.getElementById('successScreen');
         const packageSelect = document.getElementById('packageSelect');
         const btnSubmit = document.getElementById('btnSubmitOrder');
-        
-        let hasPurchasedFired = false; // 🔒 ডাবল/ট্রিপল পারচেজ আটকানোর লক
-        
+
         const BN_DIGITS = ['০','১','২','৩','৪','৫','৬','৭','৮','৯'];
         const EN_DIGITS = ['0','1','2','3','4','5','6','7','8','9'];
         
@@ -954,7 +968,6 @@
             checkoutForm.classList.remove('hidden');
             successScreen.classList.add('hidden');
             checkoutForm.reset();
-            hasPurchasedFired = false; // লক রিসেট
             
             document.querySelectorAll('.input-field').forEach(el => el.classList.remove('error'));
             document.querySelectorAll('.error-message').forEach(el => el.classList.remove('show'));
@@ -964,13 +977,23 @@
             
             modal.classList.add('open');
             document.body.style.overflow = 'hidden';
-            if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
+
+            if (isPixelActive && typeof fbq === 'function') {
+                fbq('track', 'InitiateCheckout');
+            }
         }
 
         function closeCheckoutModal(forceReset = false) {
             modal.classList.remove('open');
             document.body.style.overflow = '';
-            if (forceReset) setTimeout(() => { checkoutForm.classList.remove('hidden'); successScreen.classList.add('hidden'); checkoutForm.reset(); hasPurchasedFired = false; }, 300);
+            if (forceReset) {
+                setTimeout(() => {
+                    checkoutForm.classList.remove('hidden');
+                    successScreen.classList.add('hidden');
+                    checkoutForm.reset();
+                    hasPurchasedFired = false;
+                }, 300);
+            }
         }
 
         packageSelect.addEventListener('change', updateModalPrices);
@@ -1012,18 +1035,21 @@
         }
 
         // ==============================================
-        // SUBMIT ORDER (100% SINGLE-FIRE PURCHASE FIXED)
+        // SUBMIT ORDER (100% SINGLE-FIRE PURCHASE + DEDUPLICATION)
         // ==============================================
         checkoutForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             if (btnSubmit.disabled || hasPurchasedFired) return;
             if (!validateForm()) return;
+            
             toggleLoading(true);
+
+            const pkgKey = packageSelect.value;
+            const pkg = PACKAGES[pkgKey];
+            const delArea = document.querySelector('input[name="deliveryArea"]:checked').value;
             
-            const pkgKey = packageSelect.value, pkg = PACKAGES[pkgKey], delArea = document.querySelector('input[name="deliveryArea"]:checked').value;
-            
-            // মেটা ডুপ্লিকেট রোধের জন্য ইউনিক আইডি
-            const eventId = 'pur_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
+            // ইউনিক আইডি যা ব্রাউজার ও সার্ভার উভয়ে ব্যবহার করবে
+            const uniqueEventId = 'pur_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
 
             const orderPayload = {
                 store_name: CONFIG.STORE_NAME, 
@@ -1038,47 +1064,70 @@
                 payment: 'Cash on Delivery',
                 total: formatMoney(pkg.price), 
                 total_raw: pkg.price, 
+                event_id: uniqueEventId,
                 timestamp: new Date().toISOString()
             };
 
-            // 🎯 ঠিক ১ বারই Purchase ইভেন্ট ফায়ার হবে
-            if (!hasPurchasedFired && typeof fbq === 'function') {
-                hasPurchasedFired = true;
-                fbq('track', 'Purchase', { 
-                    value: orderPayload.total_raw, 
-                    currency: 'BDT', 
-                    content_name: orderPayload.product,
-                    content_type: 'product'
-                }, { eventID: eventId });
-            }
-
             try {
+                let isOrderSaved = false;
+                let generatedOrderId = '';
+
+                // ১. অর্ডার নিশ্চিতভাবে Worker ডাটাবেজে সংরক্ষণ
                 if (CONFIG.WORKER_URL) {
-                    await fetch(`${CONFIG.WORKER_URL}/order`, { 
+                    const response = await fetch(`${CONFIG.WORKER_URL}/order`, { 
                         method: 'POST', 
                         headers: { 'Content-Type': 'application/json' }, 
                         body: JSON.stringify(orderPayload) 
-                    }).catch(err => console.warn('Worker sync failed softly:', err));
+                    });
+                    const resData = await response.json();
+                    if (response.ok && resData.ok) {
+                        isOrderSaved = true;
+                        generatedOrderId = resData.orderId || '';
+                    } else {
+                        throw new Error(resData.error || 'Server rejected order');
+                    }
+                } else {
+                    isOrderSaved = true;
                 }
-                
-                await new Promise(r => setTimeout(r, 1000));
-                
-                const waMsg = encodeURIComponent(`আসসালামু আলাইকুম। আমি ওয়েবসাইট থেকে অর্ডার করেছি।\nনাম: ${orderPayload.name}\nমোবাইল: ${orderPayload.phone}\nআইটেম: ${pkg.title}\nমোট: ${orderPayload.total}\n\nঅনুগ্রহ করে অর্ডারটি কনফার্ম করুন।`);
+
+                // ২. সার্ভারে সফল হলে ঠিক ১ বারই ব্রাউজারে Purchase ইভেন্ট ফায়ার হবে (Deduplicated)
+                if (isOrderSaved && !hasPurchasedFired) {
+                    hasPurchasedFired = true; // লক করা হলো
+
+                    if (isPixelActive && typeof fbq === 'function') {
+                        fbq('track', 'Purchase', { 
+                            value: orderPayload.total_raw, 
+                            currency: 'BDT', 
+                            content_name: orderPayload.product,
+                            content_type: 'product',
+                            num_items: 1
+                        }, { eventID: uniqueEventId });
+                    }
+                }
+
+                // WhatsApp লিঙ্ক প্রস্তুত
+                const displayId = generatedOrderId ? `\nঅর্ডার আইডি: #${generatedOrderId}` : '';
+                const waMsg = encodeURIComponent(`আসসালামু আলাইকুম। আমি ওয়েবসাইট থেকে অর্ডার করেছি।${displayId}\nনাম: ${orderPayload.name}\nমোবাইল: ${orderPayload.phone}\nআইটেম: ${pkg.title}\nমোট: ${orderPayload.total}\n\nঅনুগ্রহ করে অর্ডারটি কনফার্ম করুন।`);
                 document.querySelectorAll('#successScreen [data-wa-link]').forEach(l => l.href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${waMsg}`);
 
+                // সাকসেস স্ক্রিন প্রদর্শন
                 checkoutForm.classList.add('hidden');
                 successScreen.classList.remove('hidden');
                 document.querySelector('.modal-scroll').scrollTop = 0;
 
             } catch (error) {
                 console.error("Order processing error:", error);
-                alert("দুঃখিত, কোনো একটি সমস্যা হয়েছে। অনুগ্রহ করে WhatsApp এ যোগাযোগ করুন।");
+                alert("দুঃখিত, কোনো একটি সমস্যা হয়েছে। অনুগ্রহ করে WhatsApp এ যোগাযোগ করুন।");
+                hasPurchasedFired = false; // ব্যর্থ হলে পুনরায় চেষ্টা করার সুযোগ
             } finally {
                 toggleLoading(false);
             }
         });
 
-        document.addEventListener('DOMContentLoaded', () => initWhatsApp());
+        document.addEventListener('DOMContentLoaded', () => {
+            initWhatsApp();
+            loadDynamicPixel(); // ডাইনামিক পিক্সেল লোড
+        });
     </script>
 </body>
 </html>
